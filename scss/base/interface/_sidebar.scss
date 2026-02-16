@@ -1,0 +1,111 @@
+.xz-main-bar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  min-width: 280px;
+  background-color: #2d313b;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: inset -8px 0px 8px -8px rgba(134, 110, 110, 0.25);
+  .logo-box {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    height: 100px;
+    padding: 0 25px;
+    .logo-link {
+      display: flex;
+      align-items: center;
+      img {
+        height: 60px;
+        width: 120px;
+      }
+    }
+    .bar-close-btn {
+      position: absolute;
+      top: 50px;
+      right: 5px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      padding: 5px;
+    }
+  }
+  .simplebar {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      .menu-title {
+        color: #70788f;
+        padding: 10px 25px;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .nav-item {
+        padding: 1px 0;
+        .nav-link {
+          position: relative;
+          display: flex;
+          gap: 12px;
+          padding: 10px 25px;
+          align-items: center;
+          white-space: nowrap;
+          transition: all 0.5s ease;
+          &:hover {
+            color: #ffffff;
+          }
+          .menu-arrow {
+            position: absolute;
+            right: 25px;
+          }
+          .nav-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+          }
+        }
+        .dropdown {
+          .sub-navbar {
+            padding-left: 12px;
+            .sub-nav-item {
+              padding: 5px 25px;
+              font-size: 14px;
+              .sub-nav-link {
+                padding: 2.5px 25px;
+                display: flex;
+                white-space: nowrap;
+                transition: all 0.5s ease;
+                &:hover {
+                  color: #ffffff;
+                  transform: translateX(5px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.bar-collapse {
+    transform: translateX(-100%);
+  }
+  // @media (max-width: 1024px) {
+  //   transform: translateX(-100%);
+  // }
+}
+
+.admin-content {
+  padding-left: 280px;
+  height: 100vh;
+  transition: 0.3s ease;
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
+}
+
+.xz-main-bar.bar-collapse ~ .admin-content {
+  padding-left: 0;
+}

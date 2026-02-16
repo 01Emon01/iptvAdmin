@@ -1,0 +1,10 @@
+.xz-topbar-wrapper {
+  .topbar-item {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    .sidebar-btn {
+      cursor: pointer;
+    }
+  }
+}

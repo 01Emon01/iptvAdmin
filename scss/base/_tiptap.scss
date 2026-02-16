@@ -1,0 +1,35 @@
+.toolbar-text-editor {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 14px;
+  border: 1px solid #565a5f;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: none;
+}
+
+.tiptap {
+  padding: 10px 14px;
+  border: 1px solid #565a5f;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  min-height: 100px;
+}
+
+.rich-editor-wrapper p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #6b707a;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+.rich-editor-wrapper {
+  ul {
+    margin-left: 15px;
+    list-style: disc;
+  }
+}

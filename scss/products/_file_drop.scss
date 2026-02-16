@@ -1,0 +1,43 @@
+.xz-img-create {
+  position: relative;
+  .img-btnsArea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .replace-prdImg-btn {
+      background-color: #aa6413c3;
+      border-radius: 8px;
+      color: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      &:hover {
+        background-color: #aa6413f4;
+      }
+    }
+    .dlt-prdImg-btn {
+      background-color: #aa1334c3;
+      border-radius: 8px;
+      color: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      &:hover {
+        background-color: #aa1334ed;
+      }
+    }
+  }
+  &:hover {
+    img {
+      filter: blur(2px);
+    }
+    .img-btnsArea {
+      .replace-prdImg-btn,
+      .dlt-prdImg-btn {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

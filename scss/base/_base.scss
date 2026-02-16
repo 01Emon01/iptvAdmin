@@ -1,0 +1,216 @@
+.admin-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #30343d;
+  .card-table-body {
+    table {
+      width: 100%;
+      border-color: gray;
+      thead {
+        tr {
+          border-bottom: 1px solid #565a5f;
+        }
+      }
+      tbody {
+        tr {
+          background-color: #30343d;
+          transition: 0.3s ease;
+          &:hover {
+            background-color: #2d3039;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid #565a5f;
+          }
+        }
+      }
+      th,
+      td {
+        padding: 12px 16px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-align: start;
+        .tbl-prd-name {
+          line-clamp: 1;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+          line-height: 24px;
+          transition: 0.5s ease;
+        }
+        .table-btn {
+          padding: 3px 8px;
+          outline: 0;
+          border-radius: 8px;
+          transition: 0.3s ease;
+          cursor: pointer;
+          &.btn-edit {
+            background-color: #9a601057;
+            color: #e4912b;
+            &:hover {
+              background-color: #e4912b;
+              color: #ffffff;
+            }
+          }
+          &.btn-delete {
+            background-color: #940c2757;
+            color: #ca2e3b;
+            &:hover {
+              background-color: #a1192b;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-pagination {
+  color: #ffff;
+  font-size: 14px;
+  border-top: 1px solid #565a5f;
+  .page-items {
+    padding: 5px 12px;
+    border: 1px solid #565a5f;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    &:hover {
+      color: #ba6d1a;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  label {
+    font-size: 14px;
+  }
+  .form-input {
+    padding: 10px 14px;
+    border: 1px solid #565a5f;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}
+
+.select-area {
+  position: relative;
+  padding: 10px 14px;
+  border: 1px solid #565a5f;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  .drop-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+    &.upside {
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+}
+
+.select-options {
+  width: 100%;
+  font-size: 14px;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #292d36;
+  border-radius: 8px;
+  z-index: 10;
+  overflow: hidden;
+  max-height: 300px;
+  ul {
+    .select-items {
+      cursor: pointer;
+      padding: 10px 14px;
+      transition: 0.3s ease;
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+      &:hover {
+        color: #ffffff;
+        background-color: #323742;
+      }
+    }
+  }
+}
+
+.adm-btn-base {
+  padding: 8px 28px;
+  border: 1px solid #565a5f;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    color: #ffffff;
+    background-color: #565a5f;
+  }
+}
+
+.adm-btn-secondary {
+  padding: 8px 28px;
+  background-color: #ba6d1a;
+  color: #ffffff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #696969;
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #0a090d;
+  border-radius: 999px;
+}
+
+.card-table-body::-webkit-scrollbar {
+  height: 4px;
+}
+
+.card-table-body::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+}
+
+.card-table-body::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
