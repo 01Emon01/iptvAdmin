@@ -1,7 +1,6 @@
 "use client";
 import { NodeApi } from "@/api/axios";
 import BannerFileDrop from "@/components/banners/BannerFileDrop";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type ImageItem = {
@@ -187,9 +186,6 @@ export default function page() {
           <button className="adm-btn-base" onClick={handleSubmit}>
             Save Changes
           </button>
-          <Link href={""} className="adm-btn-secondary">
-            Cancel
-          </Link>
         </div>
       </div>
     </div>
