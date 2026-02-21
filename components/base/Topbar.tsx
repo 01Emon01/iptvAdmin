@@ -15,8 +15,8 @@ export default function Topbar() {
       { match: "/categories", title: "Categories" },
       { match: "/categories/create", title: "Create Category" },
       { match: "/categories/edit", title: "Edit Category" },
-      { match: "/customers", title: "Customers" },
-      { match: "/reviews", title: "Reviews" },
+      { match: "/contacts", title: "Contacts" },
+      { match: "/contacts/edit", title: "Edit Contacts" },
       { match: "/banners", title: "Banners" },
       { match: "/settings", title: "Settings" },
     ];

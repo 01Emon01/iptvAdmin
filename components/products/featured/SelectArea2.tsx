@@ -40,7 +40,9 @@ export default function SelectArea2({ data, select, onSelect }: SelectProps) {
   return (
     <div ref={menuRef} className="selectArea-wrap relative">
       <div className="select-area" onClick={() => setDrop((prev) => !prev)}>
-        <div className="choices-area-text">{select.name}</div>
+        <div className="choices-area-text">
+          {select?.name ? select?.name : "Choose a product"}
+        </div>
         <div className={`drop-icon ${drop && "upside"}`}>
           <MdArrowDropDown size={22} />
         </div>

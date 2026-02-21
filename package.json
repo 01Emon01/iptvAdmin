@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node app.js",
     "lint": "eslint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@tiptap/extensions": "^3.19.0",
     "@tiptap/pm": "^3.19.0",
     "@tiptap/react": "^3.19.0",

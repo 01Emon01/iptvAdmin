@@ -43,7 +43,7 @@ export default async function page() {
             <button type="submit" className="adm-btn-base">
               Create Category
             </button>
-            <Link href={""} className="adm-btn-secondary">
+            <Link href={"/categories"} className="adm-btn-secondary">
               Cancel
             </Link>
           </div>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
-import { FaClipboardList } from "react-icons/fa";
+import { FaClipboardList, FaHeadphones } from "react-icons/fa";
 import { MdClose, MdDashboard } from "react-icons/md";
 import { PiPackageFill } from "react-icons/pi";
 import DropDown from "./interface/DropDown";
@@ -67,6 +67,13 @@ export default function Sidebar() {
         { label: "Create", href: "/categories/create" },
       ],
     },
+    {
+      type: "link",
+      id: "contacts",
+      label: "Contacts",
+      icon: <FaHeadphones />,
+      href: "/contacts",
+    },
     // {
     //   type: "dropdown",
     //   id: "orders",
@@ -119,7 +126,7 @@ export default function Sidebar() {
         <Link href={"/"} className="logo-link">
           <Image
             src={"/logo.png"}
-            width={120}
+            width={200}
             height={60}
             alt="logo"
             loading="eager"

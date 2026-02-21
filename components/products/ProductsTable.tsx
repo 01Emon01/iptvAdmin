@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
-import { CiEdit, CiTrash } from "react-icons/ci";
+import { CiEdit } from "react-icons/ci";
 import ProductTableImage from "./interface/ProductTableImage";
+import DeleteProductButton from "./interface/DeleteProductButton";
 
 type Categories = {
   id: string;
@@ -23,7 +23,7 @@ export default async function ProductsTable() {
   const res = await fetch(`${process.env.API_BASE_URL}/data/admin/products`);
   const data: Products[] = await res.json();
   return (
-    <div className="admin-card mx-2">
+    <div className="admin-card mx-2 mb-6">
       <div className="bg-[#262830] p-4">
         <h4 className="tracking-wide">Products List</h4>
       </div>
@@ -53,8 +53,10 @@ export default async function ProductsTable() {
                     </div>
                   </div>
                 </td>
-                <td>${item.price}</td>
-                <td>{item.categories.name}</td>
+                <td>
+                  <bdi>{item.price} د.إ</bdi>
+                </td>
+                <td>{item.categories?.name ? item.categories?.name : "X"}</td>
                 <td>{item.stock}</td>
                 <td>
                   <div className="flex gap-2">
@@ -64,15 +66,18 @@ export default async function ProductsTable() {
                     >
                       <CiEdit size={22} />
                     </Link>
-                    <button className="table-btn btn-delete">
-                      <CiTrash size={22} />
-                    </button>
+                    <DeleteProductButton id={item.id} />
                   </div>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {data.length === 0 && (
+          <div className="text-center text-sm tracking-wider w-full py-3">
+            No data found
+          </div>
+        )}
       </div>
       {/* <div className="table-pagination p-4">
         <ul className="flex items-ceneter justify-end">

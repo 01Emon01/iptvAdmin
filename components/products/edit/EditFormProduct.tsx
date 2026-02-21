@@ -86,7 +86,7 @@ export default function EditFormProduct({ id }: { id: string }) {
   const fetchProduct = async () => {
     try {
       const res = await NodeApi.get(`/products/${id}`);
-      setCategoryId(res.data.categories.id);
+      setCategoryId(res.data.categories?.id);
       const dbImages: ImageItem[] = res.data.images.map((img: string) => ({
         url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/data/files/${normalizePath(img)}`,
         isRemote: true,

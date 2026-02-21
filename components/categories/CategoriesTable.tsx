@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { CiEdit, CiTrash } from "react-icons/ci";
+import { CiEdit } from "react-icons/ci";
+import DeleteCategoryBtn from "./interface/DeleteCategoryBtn";
 
 type Categories = {
   id: string;
@@ -13,7 +14,7 @@ export default async function CategoriesTable() {
   const res = await fetch(`${process.env.API_BASE_URL}/data/admin/categories`);
   const data: Categories[] = await res.json();
   return (
-    <div className="admin-card mx-2">
+    <div className="admin-card mx-2 mb-6">
       <div className="bg-[#262830] p-4">
         <h4 className="tracking-wide">Categories List</h4>
       </div>
@@ -40,9 +41,7 @@ export default async function CategoriesTable() {
                       >
                         <CiEdit size={22} />
                       </Link>
-                      <button className="table-btn btn-delete">
-                        <CiTrash size={22} />
-                      </button>
+                      <DeleteCategoryBtn id={item.id} />
                     </div>
                   </td>
                 </tr>
@@ -51,7 +50,7 @@ export default async function CategoriesTable() {
           )}
         </table>
         {data.length === 0 && (
-          <div className="text-center font-semibold tracking-wider text-lg w-full py-3">
+          <div className="text-center text-sm tracking-wider w-full py-3">
             No data found
           </div>
         )}

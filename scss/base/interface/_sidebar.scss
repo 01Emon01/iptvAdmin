@@ -19,8 +19,8 @@
       display: flex;
       align-items: center;
       img {
-        height: 60px;
-        width: 120px;
+        height: auto;
+        width: 150px;
       }
     }
     .bar-close-btn {
@@ -99,7 +99,6 @@
 
 .admin-content {
   padding-left: 280px;
-  height: 100vh;
   transition: 0.3s ease;
   @media (max-width: 1024px) {
     padding-left: 0;

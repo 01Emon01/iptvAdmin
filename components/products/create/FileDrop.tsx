@@ -175,7 +175,7 @@ export default function FileDrop({
             {images.map((item, index) => (
               <div
                 key={item.url}
-                className="bg-white m-3 xz-img-create"
+                className="m-3 xz-img-create"
                 onClick={(e) => e.stopPropagation()}
               >
                 {item.url.startsWith("blob:") ? (
