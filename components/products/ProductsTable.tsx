@@ -3,25 +3,28 @@ import { CiEdit } from "react-icons/ci";
 import ProductTableImage from "./interface/ProductTableImage";
 import DeleteProductButton from "./interface/DeleteProductButton";
 
-type Categories = {
+type Category = {
   id: string;
   name: string;
   slug: string;
 };
 
-type Products = {
+type Product = {
   id: string;
-  categories: Categories;
-  category: string;
   images: string[];
   name: string;
   price: string;
   stock: string;
 };
 
+type DataItem = {
+  product: Product;
+  category: Category;
+};
+
 export default async function ProductsTable() {
   const res = await fetch(`${process.env.API_BASE_URL}/data/admin/products`);
-  const data: Products[] = await res.json();
+  const data: DataItem[] = await res.json();
   return (
     <div className="admin-card mx-2 mb-6">
       <div className="bg-[#262830] p-4">
@@ -40,33 +43,35 @@ export default async function ProductsTable() {
           </thead>
           <tbody>
             {data.map((item) => (
-              <tr key={item.id}>
+              <tr key={item.product.id}>
                 <td>
                   <div className="flex items-center gap-2">
                     <div className="rounded-lg bg-gray-600 max-w-20 overflow-hidden">
-                      <ProductTableImage data={item.images[0]} />
+                      <ProductTableImage data={item.product.images[0]} />
                     </div>
                     <div>
-                      <a href={`http://localhost:3001/products/${item.id}`}>
-                        {item.name}
+                      <a
+                        href={`http://localhost:3001/products/${item.product.id}`}
+                      >
+                        {item.product.name}
                       </a>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <bdi>{item.price} د.إ</bdi>
+                  <bdi>{item.product.price} د.إ</bdi>
                 </td>
-                <td>{item.categories?.name ? item.categories?.name : "X"}</td>
-                <td>{item.stock}</td>
+                <td>{item.category?.name ? item.category?.name : "X"}</td>
+                <td>{item.product.stock}</td>
                 <td>
                   <div className="flex gap-2">
                     <Link
-                      href={`/products/edit/${item.id}`}
+                      href={`/products/edit/${item.product.id}`}
                       className="table-btn btn-edit"
                     >
                       <CiEdit size={22} />
                     </Link>
-                    <DeleteProductButton id={item.id} />
+                    <DeleteProductButton id={item.product.id} />
                   </div>
                 </td>
               </tr>
@@ -80,7 +85,7 @@ export default async function ProductsTable() {
         )}
       </div>
       {/* <div className="table-pagination p-4">
-        <ul className="flex items-ceneter justify-end">
+        <ul className="flex items-center justify-end">
           <li className="page-items">
             <Link href={""}>Prev</Link>
           </li>

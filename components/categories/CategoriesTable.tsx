@@ -13,6 +13,7 @@ type Categories = {
 export default async function CategoriesTable() {
   const res = await fetch(`${process.env.API_BASE_URL}/data/admin/categories`);
   const data: Categories[] = await res.json();
+
   return (
     <div className="admin-card mx-2 mb-6">
       <div className="bg-[#262830] p-4">
@@ -36,7 +37,7 @@ export default async function CategoriesTable() {
                   <td>
                     <div className="flex gap-2">
                       <Link
-                        href={"/categories/edit"}
+                        href={`/categories/edit/${item.id}`}
                         className="table-btn btn-edit"
                       >
                         <CiEdit size={22} />

@@ -3,10 +3,16 @@ import { NodeApi } from "@/api/axios";
 import SelectArea2 from "@/components/products/featured/SelectArea2";
 import { useEffect, useState } from "react";
 
-type Products = {
+type Product = {
   id: string;
   images: string[];
   name: string;
+};
+
+type Category = {
+  id: string;
+  name: string;
+  slug: string;
 };
 
 type Selects = {
@@ -14,8 +20,13 @@ type Selects = {
   name: string;
 };
 
-export default function page() {
-  const [products, setProducts] = useState<Products[]>([]);
+type DataProps = {
+  product: Product;
+  category: Category;
+};
+
+export default function Featured() {
+  const [products, setProducts] = useState<DataProps[]>([]);
   const [selects, setSelects] = useState<Selects[]>([
     {
       id: "",

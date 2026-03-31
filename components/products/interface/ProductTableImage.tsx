@@ -11,7 +11,7 @@ export default function ProductTableImage({ data }: styleProps) {
   const img = normalizePath(data);
 
   const myLoader: ImageLoader = ({ src, width, quality }) => {
-    return `http://localhost:8000/data/files/${src}?w=${width}&q=${
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL}/data/files/${src}?w=${width}&q=${
       quality || 50
     }`;
   };

@@ -4,10 +4,21 @@ import { MdArrowDropDown } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import SelectImage from "./interface/SelectImage";
 
-type Products = {
+type Product = {
   id: string;
   images: string[];
   name: string;
+};
+
+type Category = {
+  id: string;
+  name: string;
+  slug: string;
+};
+
+type DataProps = {
+  product: Product;
+  category: Category;
 };
 
 type Selects = {
@@ -16,12 +27,13 @@ type Selects = {
 };
 
 type SelectProps = {
-  data: Products[];
+  data: DataProps[];
   select: Selects;
   onSelect: (id: string, name: string) => void;
 };
 
 export default function SelectArea2({ data, select, onSelect }: SelectProps) {
+  console.log(data);
   const [drop, setDrop] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const handleClick = (id: string, name: string) => {
@@ -69,20 +81,24 @@ export default function SelectArea2({ data, select, onSelect }: SelectProps) {
             }}
           >
             <ul>
-              {data.map((item) => (
-                <li
-                  className={`select-items ${item.id === select.id ? "bg-gray-900" : ""}`}
-                  onClick={() => handleClick(item.id, item.name)}
-                  key={item.id}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="prd-thumb border border-gray-600 p-1">
-                      <SelectImage url={item.images[0]} />
+              {data.map((item) => {
+                return (
+                  <li
+                    className={`select-items ${item.product.id === select.id ? "bg-gray-900" : ""}`}
+                    onClick={() =>
+                      handleClick(item.product.id, item.product.name)
+                    }
+                    key={item.product.id}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="prd-thumb border border-gray-600 p-1">
+                        <SelectImage url={item.product.images[0]} />
+                      </div>
+                      <span>{item.product.name}</span>
                     </div>
-                    <span>{item.name}</span>
-                  </div>
-                </li>
-              ))}
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
         )}
