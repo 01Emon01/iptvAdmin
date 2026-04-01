@@ -1,0 +1,17 @@
+{
+  "/(app)/banners/page": "/banners",
+  "/(app)/categories/create/page": "/categories/create",
+  "/(app)/categories/edit/[id]/page": "/categories/edit/[id]",
+  "/(app)/categories/page": "/categories",
+  "/(app)/contacts/page": "/contacts",
+  "/(app)/contacts/view/[id]/page": "/contacts/view/[id]",
+  "/(app)/page": "/",
+  "/(app)/products/create/page": "/products/create",
+  "/(app)/products/edit/[id]/page": "/products/edit/[id]",
+  "/(app)/products/featured/page": "/products/featured",
+  "/(app)/products/page": "/products",
+  "/(app)/settings/page": "/settings",
+  "/(auth)/login/page": "/login",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found"
+}

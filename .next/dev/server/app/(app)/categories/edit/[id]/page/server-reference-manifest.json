@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40aeab7bf744c60dfc898b6cbb1ce85a22c794ca28": {
+      "workers": {
+        "app/(app)/categories/edit/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(app)/categories/edit/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/helpers/updateCategory.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCategory",
+          "filename": "helpers/updateCategory.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/categories/edit/[id]/page": "rsc"
+      },
+      "exportedName": "updateCategory",
+      "filename": "helpers/updateCategory.tsx"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,20 @@
+{
+  "node": {
+    "4039ca0095c37e091cfbc667c19c8497806d53efaa": {
+      "workers": {
+        "app/(app)/settings/page": {
+          "moduleId": 77125,
+          "async": false,
+          "exportedName": "saveSettings",
+          "filename": "actions/settings.action.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/settings/page": "rsc"
+      },
+      "exportedName": "saveSettings",
+      "filename": "actions/settings.action.tsx"
+    }
+  },
+  "edge": {}
+}

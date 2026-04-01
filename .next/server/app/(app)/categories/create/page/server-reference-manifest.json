@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40a2a4fa2b1ee37bfd53a96bebe12bc812d9fa9eb7": {
+      "workers": {
+        "app/(app)/categories/create/page": {
+          "moduleId": 64352,
+          "async": false,
+          "exportedName": "createCategory",
+          "filename": "helpers/createCategory.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/categories/create/page": "rsc"
+      },
+      "exportedName": "createCategory",
+      "filename": "helpers/createCategory.tsx"
+    }
+  },
+  "edge": {}
+}

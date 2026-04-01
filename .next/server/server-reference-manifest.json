@@ -1,0 +1,51 @@
+{
+  "node": {
+    "40a2a4fa2b1ee37bfd53a96bebe12bc812d9fa9eb7": {
+      "workers": {
+        "app/(app)/categories/create/page": {
+          "moduleId": 64352,
+          "async": false,
+          "exportedName": "createCategory",
+          "filename": "helpers/createCategory.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/categories/create/page": "rsc"
+      },
+      "filename": "helpers/createCategory.tsx",
+      "exportedName": "createCategory"
+    },
+    "40c40685f9d303594e5fbb35c2cf79855bff561912": {
+      "workers": {
+        "app/(app)/categories/edit/[id]/page": {
+          "moduleId": 37070,
+          "async": false,
+          "exportedName": "updateCategory",
+          "filename": "helpers/updateCategory.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/categories/edit/[id]/page": "rsc"
+      },
+      "filename": "helpers/updateCategory.tsx",
+      "exportedName": "updateCategory"
+    },
+    "4039ca0095c37e091cfbc667c19c8497806d53efaa": {
+      "workers": {
+        "app/(app)/settings/page": {
+          "moduleId": 77125,
+          "async": false,
+          "exportedName": "saveSettings",
+          "filename": "actions/settings.action.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/settings/page": "rsc"
+      },
+      "filename": "actions/settings.action.tsx",
+      "exportedName": "saveSettings"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "HfGgiOMLITebAl+PxZixTJUH/6CDoSzJk5wlbhD0mqA="
+}

@@ -1,0 +1,37 @@
+{
+  "app": {
+    "[project]/app/(app)/banners/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/categories/create/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/categories/edit/[id]/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/categories/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/contacts/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/products/edit/[id]/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/products/featured/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/products/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/settings/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

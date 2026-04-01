@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40c40685f9d303594e5fbb35c2cf79855bff561912": {
+      "workers": {
+        "app/(app)/categories/edit/[id]/page": {
+          "moduleId": 37070,
+          "async": false,
+          "exportedName": "updateCategory",
+          "filename": "helpers/updateCategory.tsx"
+        }
+      },
+      "layer": {
+        "app/(app)/categories/edit/[id]/page": "rsc"
+      },
+      "exportedName": "updateCategory",
+      "filename": "helpers/updateCategory.tsx"
+    }
+  },
+  "edge": {}
+}
