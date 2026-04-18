@@ -1,6 +1,5 @@
 "use client";
 import { NodeApi } from "@/api/axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -14,11 +13,11 @@ export default function LoginBox() {
     const { username, password } = Object.fromEntries(formdata.entries());
     try {
       await NodeApi.post("/login", { username, password });
+      router.replace("/");
     } catch (err) {
       console.error(err);
     }
     form.reset();
-    router.refresh();
   };
 
   return (
@@ -46,9 +45,7 @@ export default function LoginBox() {
       <button type="submit" className="adm-btn-secondary mt-3">
         Submit
       </button>
-      <Link href={"/forgot-password"}>
-        <p className="text-sm text-center">Forgot password?</p>
-      </Link>
+      <p className="text-sm text-center">Forgot password?</p>
     </form>
   );
 }
