@@ -22,11 +22,27 @@ type FileDropProps = {
 const MAX_FILES = 5;
 const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
 
+const parseImages = (value: unknown): ImageItem[] => {
+  if (Array.isArray(value)) return value as ImageItem[];
+
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  return [];
+};
+
 export default function FileDrop({
   images,
   setImages,
   setDltImages,
 }: FileDropProps) {
+  const imagesData = parseImages(images);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const replaceInputRef = useRef<HTMLInputElement | null>(null);
   const replaceIndexRef = useRef<number | null>(null);
@@ -170,9 +186,9 @@ export default function FileDrop({
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
-        {images.length > 0 && (
+        {imagesData.length > 0 && (
           <div className="flex flex-wrap items-center gap-3">
-            {images.map((item, index) => (
+            {imagesData.map((item, index) => (
               <div
                 key={item.url}
                 className="m-3 xz-img-create"
@@ -207,7 +223,7 @@ export default function FileDrop({
             ))}
           </div>
         )}
-        {images.length === 0 && (
+        {imagesData.length === 0 && (
           <div className="flex flex-col gap-2 items-center justify-center my-12">
             <FaCloudUploadAlt size={36} className="text-orange-400" />
             <h3 className="text-2xl">

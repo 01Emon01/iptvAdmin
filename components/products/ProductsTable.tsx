@@ -11,7 +11,7 @@ type Category = {
 
 type Product = {
   id: string;
-  images: string[];
+  images: string;
   name: string;
   price: string;
   stock: string;
@@ -47,7 +47,7 @@ export default async function ProductsTable() {
                 <td>
                   <div className="flex items-center gap-2">
                     <div className="rounded-lg bg-gray-600 max-w-20 overflow-hidden">
-                      <ProductTableImage data={item.product.images[0]} />
+                      <ProductTableImage data={item.product.images} />
                     </div>
                     <div>
                       <a

@@ -17,7 +17,7 @@ type BannerItem = {
   image: ImageItem | null;
 };
 
-export default function page() {
+export default function Banners() {
   const [banners, setBanners] = useState<BannerItem[]>([{ image: null }]);
 
   const handleAddBanner = () => {
@@ -119,15 +119,18 @@ export default function page() {
       const res = await NodeApi.get("/banners");
       const bannerData = res.data;
 
-      const normalizedBanners: BannerItem[] = bannerData.images.map(
-        (imgPath: string) => ({
-          image: {
-            url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/data/files/${imgPath.replace(/\\/g, "/").replace("uploads", "")}`,
-            isRemote: true,
-            path: imgPath,
-          },
-        }),
-      );
+      const images =
+        typeof bannerData.images === "string"
+          ? JSON.parse(bannerData.images)
+          : bannerData.images;
+
+      const normalizedBanners: BannerItem[] = images.map((imgPath: string) => ({
+        image: {
+          url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/data/files/${imgPath.replace(/\\/g, "/").replace("uploads", "")}`,
+          isRemote: true,
+          path: imgPath,
+        },
+      }));
 
       setBanners(normalizedBanners);
     } catch (err) {
