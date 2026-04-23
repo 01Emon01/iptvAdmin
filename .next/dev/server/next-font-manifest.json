@@ -1,0 +1,16 @@
+{
+  "app": {
+    "[project]/app/(app)/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/products/edit/[id]/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ],
+    "[project]/app/(app)/products/page": [
+      "static/media/e7af107ebd9caa41-s.p.1c70c238.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
