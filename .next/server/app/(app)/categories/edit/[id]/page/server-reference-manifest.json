@@ -1,6 +1,6 @@
 {
   "node": {
-    "4018c533a52a3e44330b9ba561623a9d495609ba70": {
+    "4023a4fca2f8be06bcba3bac8b41ba85ac3c6aaed7": {
       "workers": {
         "app/(app)/categories/edit/[id]/page": {
           "moduleId": 37070,

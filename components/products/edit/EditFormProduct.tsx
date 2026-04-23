@@ -87,7 +87,11 @@ export default function EditFormProduct({ id }: { id: string }) {
     try {
       const res = await NodeApi.get(`/products/${id}`);
       setCategoryId(res.data.category?.id);
-      const dbImages: ImageItem[] = res.data.images.map((img: string) => ({
+      const parsedImages =
+        typeof res.data.images === "string"
+          ? JSON.parse(res.data.images)
+          : res.data.images;
+      const dbImages: ImageItem[] = parsedImages.map((img: string) => ({
         url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/data/files/${normalizePath(img)}`,
         isRemote: true,
         path: img,
